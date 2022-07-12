@@ -667,7 +667,7 @@ input.header-site__input-search::placeholder {
     height: 100%;
 }
 
-.swiper-slide__image--hover {
+.image-slide-hover {
     object-fit: contain;
     width: 90%;
     height: 100%;
@@ -1265,7 +1265,7 @@ input.header-site__input-search::placeholder {
     position: relative;
 }
 
-.tooltips-text__style {
+.tooltips-text-style {
     color: #FFFFFF;
     font-weight: 600;
     font-size: 12px;
