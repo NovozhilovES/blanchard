@@ -2,6 +2,7 @@ const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     loop: true,
     spaceBetween: 880,
+    allowTouchMove: false,
 
     a11y: {
         paginationBulletMessage: 'Перейти к слайду {{index}}',
@@ -12,13 +13,14 @@ const swiper = new Swiper('.swiper-container', {
         stopOnLastSlide: false,
         disableOnInteraction: true,
     }
+    
 });
 
 document.addEventListener('DOMContentLoaded', (e) => {
 
 var btnSearchOpen = document.querySelector('.header-site__button-search');
 var btnSearchClose = document.querySelector('.mobile-search-btn');
-var windowSearch =document.querySelector('.mobile-search');
+var windowSearch = document.querySelector('.mobile-search');
 
     btnSearchOpen.addEventListener('click', function() {
         event.preventDefault();
@@ -144,7 +146,7 @@ const swiperDevelopments = new Swiper('.developments-content__slider', {
         1325: {
             slidesPerView: 3,
             slidesPerGroup: 3,
-            loop: true,
+            loop: false,
             spaceBetween: 50,
         },
 
@@ -210,21 +212,21 @@ const swiperProject = new Swiper('.project-swiper', {
         1325: {
             slidesPerView: 3,
             slidesPerGroup: 3,
-            loop: true,
+            loop: false,
             spaceBetween: 50,
         },    
 
         1024: {
             slidesPerView: 2,
             slidesPerGroup: 2,
-            loop: true,
+            loop: false,
             spaceBetween: 50,
         },
 
         768: {
             slidesPerView: 2,
             slidesPerGroup: 2,
-            loop: true,
+            loop: false,
             spaceBetween: 34,
         },
 
@@ -232,6 +234,7 @@ const swiperProject = new Swiper('.project-swiper', {
             slidesPerView: 2,
             slidesPerGroup: 2,
             spaceBetween: 40,
+            loop: false,
         }
     },
 });
@@ -267,14 +270,14 @@ $(".accordion").accordion({
             // Порядок по умолчанию: «широта, долгота».
             // Чтобы не определять координаты центра карты вручную,
             // воспользуйтесь инструментом Определение координат.
-            center: [55.75846806898367,37.60108849999989],
+            center: [55.75975592404668,37.61495546568035],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
             controls: ['smallMapDefaultSet'],
             // myMap.behaviors.disable('scrollZoom');
-            zoom: 16
+            zoom: 14
         }, {
-            searchControlProvider: 'yandex#search'
+            // searchControlProvider: 'yandex#search',
         });
 
         myMap.behaviors.disable('scrollZoom');
@@ -286,7 +289,12 @@ $(".accordion").accordion({
             iconImageOffset: [-3, -42]
         });
         
-
+        myMap.controls.remove('geolocationControl');
+        myMap.controls.remove('typeSelector');
+        myMap.controls.remove('fullscreenControl');
+        myMap.controls.remove('searchControl');
+        myMap.controls.remove('zoomControl');
+        myMap.controls.remove('routeEditor');
         myMap.geoObjects.add(myPlacemark); 
     }
 
@@ -301,7 +309,7 @@ $(".accordion").accordion({
 
 
     var selector = document.querySelector("input[type='tel']");
-    var im = new Inputmask("+7(999)-999-999-99");
+    var im = new Inputmask("+7(999)-999-99-99");
     im.mask(selector);
 
     const validation = new JustValidate('#form', {
@@ -317,11 +325,11 @@ $(".accordion").accordion({
                 value: 3,
                 errorMessage: 'Поле может содержать минимум 3 символа',
             },
-            {
-                rule: 'customRegexp',
-                value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/,
-                errorMessage: 'Недопустимый формат'
-            },
+            // {
+            //     rule: 'customRegexp',
+            //     value: /(?=.*[@$!%*#?&^_-])/,
+            //     errorMessage: 'Недопустимый формат'
+            // },
             {
                 rule: 'maxLength',
                 value: 30,
@@ -336,9 +344,9 @@ $(".accordion").accordion({
             {
                 validator: (value) => {
                     const phone = selector.inputmask.unmaskedvalue();
-                    return Boolean(Number(phone) && phone.length === 11) //либо >0 
+                    return Boolean(Number(phone) && phone.length === 10) //либо >0 
                 },
-                errorMessage: 'Введите полный номер',
+                errorMessage: 'Недопустимый формат',
             }    
         ]);
 
@@ -371,4 +379,42 @@ $(".accordion").accordion({
     });
 
 });
+
+tippy('#tooltips-one', {
+    content: '<span style=" font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">Пример современных тенденций современная методология разработки</span>',
+    allowHTML: true,
+    theme: 'tooltip-style',
+    arrow: false,
+    delay: [200, 100],
+    duration: 300,
+    maxWidth: 240,
+    trigger: 'click',
+    hideOnClick: "toggle",
+});
+
+tippy('#tooltips-two', {
+    content: '<span style=" border-radius: none; font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">В стремлении повысить качество</span>',
+    theme: 'tooltip-style',
+    allowHTML: true,
+    arrow: false,
+    delay: [200, 100],
+    duration: 300,
+    maxWidth: 240,
+    trigger: 'click',
+    hideOnClick: "toggle",
+});
+
+tippy('#tooltips-three', {
+    content: '<span style=" font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции</span>',
+    theme: 'tooltip-style',
+    allowHTML: true,
+    arrow: false,
+    delay: [200, 100],
+    duration: 300,
+    maxWidth: 240,
+    trigger: 'click',
+    hideOnClick: "toggle",
+});
+
+
 
