@@ -97,6 +97,7 @@ const swiperGallery = new Swiper('.gallery-swiper', {
     a11y: {
         prevSlideMessage: 'Предыдущий слайд',
         nextSlideMessage: 'Следующий слайд',
+        paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
 
     navigation: {
@@ -192,6 +193,7 @@ const swiperDevelopments = new Swiper('.developments-content__slider', {
     a11y: {
         prevSlideMessage: 'Предыдущий слайд',
         nextSlideMessage: 'Следующий слайд',
+        paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
 });
 
@@ -205,6 +207,7 @@ const swiperProject = new Swiper('.project-swiper', {
     a11y: {
         prevSlideMessage: 'Предыдущий слайд',
         nextSlideMessage: 'Следующий слайд',
+        paginationBulletMessage: 'Перейти к слайду {{index}}',
     },
 
         breakpoints: {

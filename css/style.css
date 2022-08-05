@@ -12,6 +12,9 @@
     --gray-block-color: #B7B7B7;
     --error-form-color: #D11616;
     --accordeon-icon-hover: #D1A9F0;
+    --hover-input: #EAEAEA;
+    --gallery-modal-descr-color: #969696;
+    --outline-connection-style: #2AABEE;
 }
 
 :hover, :focus-visible, :active {
@@ -245,12 +248,12 @@ button {
 }
 
 .item-flow-btn:focus-visible .flow-btn-arrow path {
-    stroke: white;
+    stroke: var(--basic-color);
 } 
 
 .item-flow-btn:focus-visible {
     background-color: var(--accordeon-color);
-    color: #FFFFFF;
+    color: var(--basic-color);
     outline: none;
 }
 
@@ -266,7 +269,7 @@ button {
 .dropdown-content {
     width: 220px;
     height: 40px;
-    color: #FFFFFF;
+    color: var(--basic-color);
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
@@ -375,7 +378,7 @@ button {
     z-index: 100;
     width: 5px;
     height: 1.4px;
-    background-color: #FFFFFF;
+    background-color: var(--basic-color);
     top: 50%;
 }
 
@@ -582,13 +585,13 @@ input.header-site__input-search::placeholder {
 /* SCROLLBAR */
 
 .simplebar-scrollbar {
-    background-color: #FFFFFF;
+    background-color: var(--basic-color);
     height: 28px !important; 
 }
 
 .simplebar-track.simplebar-vertical {
     margin: 40px 20px 0 0;
-    background-color: #000000;
+    background-color: var(--black-color);
     width: 2px;
     height: 220px;
 }
@@ -648,15 +651,15 @@ input.header-site__input-search::placeholder {
 }
 
 .gallery-button-icon:active path {
-    stroke: black;
+    stroke: var(--black-color)
 }
 
 .gallery-button-icon:active {
-    border: 1px solid black;
+    border: 1px solid var(--black-color);
 }
 
 .gallery-button-next:focus-visible .gallery-button-icon {
-    outline: 4px solid black;
+    outline: 4px solid var(--black-color);
     border-radius: 50px;
 }
 
@@ -774,7 +777,7 @@ select option:checked { display: none; }
     background-color: rgba(255, 255, 255, 0.2);
 }
 .choices__list--dropdown, .choices__list[aria-expanded] {
-    background-color: #000000;
+    background-color: var(--black-color);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
@@ -969,7 +972,7 @@ select option:checked { display: none; }
 
 .year-accordeon__text:focus-visible .year-accordeon__text-tittle {
     background-color: var(--input-call-color);
-    color: #FFFFFF;
+    color: var(--basic-color);
 }
 
 .year-accordeon__text:focus-visible .year-accordeon__text-icon path {
@@ -1042,7 +1045,7 @@ select option:checked { display: none; }
 }
 
 .year-accordeon__text.ui-state-active .year-accordeon__text-icon path:nth-child(3n) {
-    stroke: black;
+    stroke: var(--black-color);
 } 
 
 .yaer-accordeon-list {
@@ -1063,21 +1066,21 @@ select option:checked { display: none; }
 
 .yaer-accordeon-list__btn--active {
     background-color: var(--input-call-color);
-    color: #FFFFFF;
+    color: var(--basic-color);
 }
 
 .ui-widget button:hover {
-    color: #CACACA;
+    color: var(--accordeon-close-color);
     text-decoration: underline;
 }
 
 .ui-widget button:active {
-    color: #CACACA;
+    color: var(--accordeon-close-color);
     text-decoration: none;
 }
 
 .ui-widget button:focus-visible {
-    color: #CACACA;
+    color: var(--accordeon-close-color);
     background-color: var(--accordeon-color);
 }
 
@@ -1175,7 +1178,7 @@ select option:checked { display: none; }
 
 .tippy-box[data-theme~='tooltip-style'] {
     background-color: var(--input-call-color);
-    color: white;
+    color: var(--basic-color);
     border-radius: 0;
 }
 
@@ -1196,7 +1199,7 @@ select option:checked { display: none; }
 
 .swiper-slide-content__text-link:focus-visible {
     background-color: var(--input-call-color);
-    color: white;
+    color: var(--basic-color)
 }
 
 .dev-button-next {
@@ -1241,7 +1244,7 @@ select option:checked { display: none; }
 
 .project-link:focus-visible {
     background-color: var(--input-call-color);
-    color: white;
+    color: var(--basic-color)
 }
 
 .project-link:hover {
@@ -1263,7 +1266,7 @@ select option:checked { display: none; }
 
 .swiper-slide-project {
     max-width: 450px;
-    outline: 1px solid #CACACA;
+    outline: 1px solid var(--accordeon-close-color);
     outline-offset: -2px;
     filter: grayscale(.7); 
     display: flex;
@@ -1323,7 +1326,7 @@ select option:checked { display: none; }
 }
 
 .tooltips-text-style {
-    color: #FFFFFF;
+    color: var(--basic-color);
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
@@ -1374,10 +1377,6 @@ select option:checked { display: none; }
 }
 
 
-/* .project-content__tooltips {
-    cursor: pointer;
-} */
-
 .project-content__tooltips:hover .tooltips-icon {
     fill: var(--accordeon-icon-hover);
 }
@@ -1387,7 +1386,7 @@ select option:checked { display: none; }
 }
 
 .project-content__tooltips:active .tooltips-icon {
-    fill: #9D5CD0
+    fill: var(--input-call-color)
 }
 
 /* ADRESS */
@@ -1439,12 +1438,12 @@ select option:checked { display: none; }
 }
 
 .connection__input-style:hover {
-    background-color: #EAEAEA;
+    background-color: var(--hover-input);
     transition: background-color .3s ease-in-out;
 }
 
 .connection__input-style:focus-visible {
-    background-color: #EAEAEA;
+    background-color: var(--hover-input);
 }
 
 .connection__btn-style {
@@ -1511,7 +1510,7 @@ select option:checked { display: none; }
 /* FOOTER */
 
 .footer-content {
-    background-color: #000000;
+    background-color: var(--black-color);
     padding: 50px 0;
 }
 
