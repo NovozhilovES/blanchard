@@ -1709,6 +1709,11 @@
         height: 150px;
     }
 
+    .swiper-slide-project:focus-visible {
+        outline-color: var(--input-call-color);
+        filter: grayscale(0);
+    }
+
     .connection {
         flex-direction: row;
     }
@@ -1735,6 +1740,11 @@
         border: transparent;
     }
 
+    .connection__btn-style:focus-visible {
+        outline: 4px solid var(--accordeon-icon-hover);
+        border: transparent;
+    }
+
     .connection__call {
         padding: 10px 0 0 0;
     }
@@ -1750,6 +1760,10 @@
     .adress-map {
         outline: 1px solid #2AABEE;
         outline-offset: 2px;
+    }
+
+    .connection-social-icon:focus-visible {
+        filter: grayscale(1);
     }
     
     .footer-icon__link {

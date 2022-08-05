@@ -301,6 +301,7 @@ $(".accordion").accordion({
     const element = document.querySelector('select');
     const choices = new Choices(element, {
         searchEnabled: false,
+        allowHTML: true,
         itemSelectText: '',
         resetScrollPosition: false, 
         shouldSort: false,
@@ -325,11 +326,12 @@ $(".accordion").accordion({
                 value: 3,
                 errorMessage: 'Поле может содержать минимум 3 символа',
             },
-            // {
-            //     rule: 'customRegexp',
-            //     value: /(?=.*[@$!%*#?&^_-])/,
-            //     errorMessage: 'Недопустимый формат'
-            // },
+            {
+                rule: 'customRegexp',
+                value: /^(?=.*[А-яЁё]).*$/,
+                errorMessage: 'Недопустимый формат'
+            },
+            // (?=.*[@$!%*#?&^_-])   ^(?=.*\d)(?=.*[А-яЁё])(?!.*\s).*$
             {
                 rule: 'maxLength',
                 value: 30,
@@ -416,5 +418,12 @@ tippy('#tooltips-three', {
     hideOnClick: "toggle",
 });
 
+// var modalOpen = document.getElementById('modal-open-one');
+
+modalOpen.onkeydown = function(e) {
+    if(e.keyCode === 13) { // Кнопка Enter
+      document.activeElement.click();
+    }
+};
 
 
