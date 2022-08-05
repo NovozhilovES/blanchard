@@ -17,10 +17,6 @@
     --outline-connection-style: #2AABEE;
 }
 
-:hover, :focus-visible, :active {
-    transition: all .2s ease-in-out;
-}
-
 /* FONTS */
 
 @font-face {
@@ -226,14 +222,6 @@ button {
     transition: transform .3s ease-in-out;
 }
 
-.item-flow-btn:hover {
-    color: var(--accordeon-color);
-}
-
-.item-flow-btn:hover .flow-btn-arrow path {
-    stroke: var(--accordeon-color);
-}
-
 .item-flow-btn.btn__active {
     color: var(--accordeon-color);
 }
@@ -278,12 +266,6 @@ button {
     padding: 10px 124px 10px 14px;
     cursor: pointer;
 }
-
-.dropdown-content:hover {
-    outline: 2px solid var(--input-call-color);
-    outline-offset: -2px;
-}
-
 
 .dropdown-content:not(:last-child) {
     margin: 0 0 20px 0;
@@ -382,22 +364,8 @@ button {
     top: 50%;
 }
 
-.header-site__btn-enter:hover .arrow-enter{
-    background-color: var(--checkbox-color);
-    transform: translateX(-4px);
-    transition: all .3s ease-in-out;
-}
-
-.header-site__btn-enter:active .arrow-enter{
+.header-site__btn-enter:active .arrow-enter {
     background-color: var(--input-call-color);
-}
-
-.header-site__btn-enter:hover {
-    color: var(--checkbox-color);
-}
-
-.header-site__btn-enter:hover .header-site__btn-icon path {
-    fill: var(--checkbox-color);
 }
 
 .header-site__btn-enter:active {
@@ -419,10 +387,6 @@ button {
 
 .header-site__btn-enter {
     align-items: center;
-}
-
-.header-site__item:hover {
-    color: var(--checkbox-color);
 }
 
 .header-site__item:active {
@@ -512,11 +476,6 @@ button {
     pointer-events: all;
 }
 
-.header-site__btn:hover {
-    outline: 3px solid var(--accordeon-icon-hover);
-    transition: outline .1s ease-in-out;
-}
-
 .header-site__btn:focus-visible {
     outline: 2px solid var(--accordeon-icon-hover);
     border-color: var(--basic-color);
@@ -539,10 +498,7 @@ button {
     padding: 0;
 }
 
-.header-site__input-search:hover {
-    border-bottom-color: var(--checkbox-color);
-    transition: all .3s ease-in-out;
-}
+
 .header-site__input-search:focus {
     border-bottom-color: var(--accordeon-color);
     transition: all .3s ease-in-out;
@@ -640,10 +596,6 @@ input.header-site__input-search::placeholder {
     flex-direction: row;
     align-items: center;
     margin: 0 0 30px 0;
-}
-
-.gallery-button-icon:hover path {
-    fill: var(--input-call-color);
 }
 
 .gallery-button-icon:disabled {
@@ -749,10 +701,6 @@ input.header-site__input-search::placeholder {
     color: var(--basic-color);
     font-weight: 400;
     font-size: 16px;
-}
-
-.choices:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .choices:focus-visible {
@@ -863,13 +811,6 @@ select option:checked { display: none; }
 
 }
 
-.gallery__checkbox-style:hover .checkbox-style-text {
-    color: var(--checkbox-color);
-}
-
-.gallery__checkbox-style:hover .checkbox-style-text::before {
-    border-color: var(--checkbox-color);
-}
 
 .gallery__checkbox-style input:focus-visible + span {
     color: var(--checkbox-color);
@@ -989,19 +930,6 @@ select option:checked { display: none; }
     border-bottom: 1px solid var(--accordeon-close-color);
 }
 
-.year-accordeon__text:hover {
-    border-top: 1px solid var(--input-call-color);
-    border-bottom: 1px solid var(--input-call-color);
-}
-
-.year-accordeon__text:hover .year-accordeon__text-icon path {
-    fill: var(--accordeon-icon-hover);
-}
-
-.year-accordeon__text:hover .year-accordeon__text-tittle {
-    color: var(--input-call-color);
-}
-
 .year-accordeon__text:active .year-accordeon__text-tittle {
     color: var(--accordeon-color);
 }
@@ -1069,11 +997,6 @@ select option:checked { display: none; }
     color: var(--basic-color);
 }
 
-.ui-widget button:hover {
-    color: var(--accordeon-close-color);
-    text-decoration: underline;
-}
-
 .ui-widget button:active {
     color: var(--accordeon-close-color);
     text-decoration: none;
@@ -1131,8 +1054,6 @@ select option:checked { display: none; }
     line-height: 22px;
     color: var(--input-call-color)
 }
-
-
 
 /* DEVELOPMENTS */
 
@@ -1247,11 +1168,6 @@ select option:checked { display: none; }
     color: var(--basic-color)
 }
 
-.project-link:hover {
-    color: var(--input-call-color);
-    border-bottom: 1px solid var(--input-call-color);
-}
-
 .project-link:active {
     color: var(--accordeon-color);
     border-bottom: 1px solid var(--accordeon-color);
@@ -1280,11 +1196,6 @@ select option:checked { display: none; }
     outline-color: var(--input-call-color);
 }
 
-.swiper-slide-project:hover {
-    transition: filter .3s ease-in-out;
-    filter: grayscale(0);
-}
-
 .project-swiper {
     overflow: hidden;
     max-width: 1450px;
@@ -1295,14 +1206,6 @@ select option:checked { display: none; }
     position: relative;
     z-index: 100;
     cursor: pointer;
-}
-
-.partners-button-prev:hover .partners-button-prev__icon path {
-    fill: var(--accordeon-icon-hover);
-}
-
-.partners-button-next:hover .partners-button-next__icon path {
-    fill: var(--accordeon-icon-hover);
 }
 
 .partners-button-prev:focus-visible .partners-button-prev__icon path {
@@ -1361,26 +1264,6 @@ select option:checked { display: none; }
     left: -6vw;
 }
 
-.tooltips-one:hover + .tooltips-one-text{
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-}
-
-.tooltips-two:hover + .tooltips-two-text{
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-}
-
-.tooltips-three:hover + .tooltips-three-text{
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-}
-
-
-.project-content__tooltips:hover .tooltips-icon {
-    fill: var(--accordeon-icon-hover);
-}
-
 .project-content__tooltips:focus-visible .tooltips-icon {
     fill: var(--accordeon-icon-hover);
 }
@@ -1437,11 +1320,6 @@ select option:checked { display: none; }
     padding: 9px 24px;
 }
 
-.connection__input-style:hover {
-    background-color: var(--hover-input);
-    transition: background-color .3s ease-in-out;
-}
-
 .connection__input-style:focus-visible {
     background-color: var(--hover-input);
 }
@@ -1483,13 +1361,6 @@ select option:checked { display: none; }
     margin: 0 20px 0 0;
 }
 
-.connection-social-icon:hover {
-    filter: grayscale(.7);
-    outline: 3px solid  var(--input-call-color); 
-    outline-offset: -3px;
-    transition: all .3s ease-in-out;
-}
-
 .connection-social-icon:active {
     filter: grayscale(0);
     outline: 3px solid  var(--input-call-color); 
@@ -1523,10 +1394,6 @@ select option:checked { display: none; }
 
 .footer-icon__point {
     cursor: pointer;
-}
-
-.footer-icon__point:hover path {
-    fill: var(--basic-color);
 }
 
 .footer-icon__link:focus-visible .footer-icon__point path {
