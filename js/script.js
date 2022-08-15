@@ -24,11 +24,11 @@ var windowSearch = document.querySelector('.mobile-search');
 
     btnSearchOpen.addEventListener('click', function() {
         event.preventDefault();
-        windowSearch.classList.add('mobile-search--active');
+        windowSearch.classList.toggle('mobile-search--active');
     });
     
     btnSearchClose.addEventListener('click', function() {
-        windowSearch.classList.remove('mobile-search--active');
+        windowSearch.classList.toggle('mobile-search--active');
         event.preventDefault();
     }); 
 
@@ -276,27 +276,43 @@ $(".accordion").accordion({
             center: [55.75975592404668,37.61495546568035],
             // Уровень масштабирования. Допустимые значения:
             // от 0 (весь мир) до 19.
-            controls: ['smallMapDefaultSet'],
-            // myMap.behaviors.disable('scrollZoom');
+            controls: [],
             zoom: 14
         }, {
-            // searchControlProvider: 'yandex#search',
+            suppressMapOpenBlock: true
+        });
+
+        myMap.controls.add('geolocationControl', {
+            float: 'none', 
+            position: {
+                bottom: '320px',
+                right: '30px'
+            }
+        });
+
+        myMap.controls.add('zoomControl', {
+            size: 'small',
+            float: 'none',
+            position: {
+                bottom: '350px',
+                right: '30px'
+            }
         });
 
         myMap.behaviors.disable('scrollZoom');
 
         var myPlacemark = new ymaps.Placemark([55.7598840564627,37.61417804737697], {}, {
             iconLayout: 'default#image',
-            iconImageHref: '/img/map-point.svg',
+            iconImageHref: './img/map-point.svg',
             iconImageSize: [30, 42],
             iconImageOffset: [-3, -42]
         });
         
-        myMap.controls.remove('geolocationControl');
+        // myMap.controls.remove('geolocationControl');
         myMap.controls.remove('typeSelector');
         myMap.controls.remove('fullscreenControl');
         myMap.controls.remove('searchControl');
-        myMap.controls.remove('zoomControl');
+        // myMap.controls.remove('zoomControl');
         myMap.controls.remove('routeEditor');
         myMap.geoObjects.add(myPlacemark); 
     }
@@ -356,8 +372,8 @@ $(".accordion").accordion({
         ]);
 
         new SimpleBar(document.getElementById('header-scroll'), {
-            autoHide: false,
-            scrollbarMaxSize: 25
+            // autoHide: true,
+            scrollbarMaxSize: 28
         });
 
         const btns = document.querySelectorAll(".item-flow-btn");
@@ -393,7 +409,7 @@ tippy('#tooltips-one', {
     delay: [200, 100],
     duration: 300,
     maxWidth: 240,
-    trigger: 'click',
+    trigger: 'click mouseenter',
     hideOnClick: "toggle",
 });
 
@@ -405,7 +421,7 @@ tippy('#tooltips-two', {
     delay: [200, 100],
     duration: 300,
     maxWidth: 240,
-    trigger: 'click',
+    trigger: 'click mouseenter',
     hideOnClick: "toggle",
 });
 
@@ -417,11 +433,9 @@ tippy('#tooltips-three', {
     delay: [200, 100],
     duration: 300,
     maxWidth: 240,
-    trigger: 'click',
+    trigger: 'click mouseenter',
     hideOnClick: "toggle",
 });
-
-// var modalOpen = document.getElementById('modal-open-one');
 
 modalOpen.onkeydown = function(e) {
     if(e.keyCode === 13) { // Кнопка Enter
