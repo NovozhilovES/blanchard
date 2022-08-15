@@ -1146,7 +1146,7 @@ select option:checked { display: none; }
     opacity: 0;
 }
 
-.dev-button-next:focus-visible .dev-button-next__icon path {
+.dev-button-next:focus-visible .dev-button-next-icon path {
     stroke: var(--input-call-color);
 }
 
