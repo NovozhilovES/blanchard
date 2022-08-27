@@ -236,7 +236,14 @@ const swiperProject = new Swiper('.project-swiper', {
         576: {
             slidesPerView: 2,
             slidesPerGroup: 2,
-            spaceBetween: 40,
+            spaceBetween: 50,
+            loop: false,
+        },
+
+        320: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 50,
             loop: false,
         }
     },
@@ -304,7 +311,7 @@ $(".accordion").accordion({
         var myPlacemark = new ymaps.Placemark([55.7598840564627,37.61417804737697], {}, {
             iconLayout: 'default#image',
             iconImageHref: './img/map-point.svg',
-            iconImageSize: [30, 42],
+            iconImageSize: [20, 20],
             iconImageOffset: [-3, -42]
         });
         
@@ -335,15 +342,18 @@ $(".accordion").accordion({
     const validation = new JustValidate('#form', {
         errorFieldCssClass: 'is-invalid',
         errorLabelStyle: {
-            color: '#FF5C00',
+            color: '#D11616',
           },
+        // errorFieldStyle: {
+        //     border: '1px solid #d11616',
+        // },
     });
     validation
         .addField('#name', [
             {
                 rule: 'minLength',
                 value: 3,
-                errorMessage: 'Поле может содержать минимум 3 символа',
+                errorMessage: 'Введите более 3-х символов',
             },
             {
                 rule: 'customRegexp',
@@ -367,7 +377,7 @@ $(".accordion").accordion({
                     const phone = selector.inputmask.unmaskedvalue();
                     return Boolean(Number(phone) && phone.length === 10) //либо >0 
                 },
-                errorMessage: 'Недопустимый формат',
+                errorMessage: 'Укажите ваш телефон',
             }    
         ]);
 
@@ -405,9 +415,9 @@ tippy('#tooltips-one', {
     content: '<span style=" font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">Пример современных тенденций современная методология разработки</span>',
     allowHTML: true,
     theme: 'tooltip-style',
-    arrow: false,
-    delay: [200, 100],
-    duration: 300,
+    arrow: true,
+    delay: [300, 300],
+    duration: 400,
     maxWidth: 240,
     trigger: 'click mouseenter',
     hideOnClick: "toggle",
@@ -417,9 +427,9 @@ tippy('#tooltips-two', {
     content: '<span style=" border-radius: none; font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">В стремлении повысить качество</span>',
     theme: 'tooltip-style',
     allowHTML: true,
-    arrow: false,
-    delay: [200, 100],
-    duration: 300,
+    arrow: true,
+    delay: [300, 300],
+    duration: 400,
     maxWidth: 240,
     trigger: 'click mouseenter',
     hideOnClick: "toggle",
@@ -429,9 +439,9 @@ tippy('#tooltips-three', {
     content: '<span style=" font-size: 12px; font-weight: 600; display: inline-block; text-align: center;">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции</span>',
     theme: 'tooltip-style',
     allowHTML: true,
-    arrow: false,
-    delay: [200, 100],
-    duration: 300,
+    arrow: true,
+    delay: [300, 300],
+    duration: 400,
     maxWidth: 240,
     trigger: 'click mouseenter',
     hideOnClick: "toggle",
